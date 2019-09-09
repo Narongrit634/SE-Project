@@ -10,20 +10,14 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterController">
    <children>
-      <TextField fx:id="fullname" layoutX="201.0" layoutY="107.0" />
-      <TextField fx:id="username" layoutX="201.0" layoutY="168.0" />
-      <PasswordField fx:id="password" layoutX="200.0" layoutY="231.0" />
-      <PasswordField fx:id="re_pass" layoutX="201.0" layoutY="293.0" />
-      <TextField fx:id="email" layoutX="202.0" layoutY="357.0" />
-      <Button styleClass="okbutton" fx:id="register" layoutX="610.0" layoutY="510.0" mnemonicParsing="false" onAction="#onRegister" prefHeight="31.0" prefWidth="77.0" text="Register">
-         <font>
-            <Font name="SansSerif Regular" size="14.0" />
-         </font>
+      <TextField styleClass="form-control" fx:id="fullname" layoutX="201.0" layoutY="107.0" />
+      <TextField styleClass="form-control" fx:id="username" layoutX="201.0" layoutY="168.0" />
+      <PasswordField styleClass="form-control" fx:id="password" layoutX="200.0" layoutY="231.0" />
+      <PasswordField styleClass="form-control" fx:id="re_pass" layoutX="201.0" layoutY="293.0" />
+      <TextField styleClass="form-control" fx:id="email" layoutX="202.0" layoutY="357.0" />
+      <Button styleClass="btn,btn-primary" fx:id="register" layoutX="610.0" layoutY="510.0" mnemonicParsing="false" onAction="#onRegister" prefHeight="31.0" prefWidth="77.0" text="Register">
       </Button>
       <Hyperlink fx:id="back" layoutX="104.0" layoutY="517.0" onAction="#onHandleBack" prefHeight="23.0" prefWidth="76.0" text="&lt;&lt;Back">
-         <font>
-            <Font name="SansSerif Regular" size="14.0" />
-         </font>
       </Hyperlink>
       <Label styleClass="myLabel" layoutX="90.0" layoutY="105.0" prefHeight="23.0" prefWidth="100.0" text="Fullname :">
       </Label>

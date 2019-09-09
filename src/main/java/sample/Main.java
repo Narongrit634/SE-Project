@@ -13,7 +13,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/login.fxml"));
         primaryStage.setTitle("SE-Project");
         Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add("stylesheet.css");
+        scene.getStylesheets().add("org/kordamp/bootstrapfx/bootstrapfx.css");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

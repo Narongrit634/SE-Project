@@ -27,7 +27,7 @@ public class RegisterController {
         FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("/login.fxml"));
         try{
             Scene scene = new Scene((Parent) fxmlLoader.load(), 800, 600);
-            scene.getStylesheets().add("stylesheet.css");
+            scene.getStylesheets().add("org/kordamp/bootstrapfx/bootstrapfx.css");
             stage.setScene(scene);
             stage.show();
         }catch (IOException e){
@@ -52,7 +52,8 @@ public class RegisterController {
                 Stage stage =(Stage)back.getScene().getWindow();
                 FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("/login.fxml"));
                 try{
-                    stage.setScene(new Scene((Parent) fxmlLoader.load(),800,600));
+                    Scene scene = new Scene((Parent) fxmlLoader.load(), 800, 600);
+                    scene.getStylesheets().add("org/kordamp/bootstrapfx/bootstrapfx.css");
                     stage.show();
                 }catch (IOException e){
                     e.printStackTrace();
