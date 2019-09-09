@@ -1,0 +1,17 @@
+.myLabel{
+    -fx-font-size: 14px;
+    -fx-font-family: sans-serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+}
+.myLabel-alert{
+    -fx-font-size: 14px;
+    -fx-font-family: sans-serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: red;
+}
+.okbutton:hover{
+    -fx-text-fill: white;
+    -fx-background-color: green;
+}
+

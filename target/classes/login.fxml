@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <TextField fx:id="username" layoutX="178.0" layoutY="174.0" promptText="Enter Username" />
+            <PasswordField fx:id="password" layoutX="178.0" layoutY="208.0" promptText="Enter Password" />
+            <Label layoutX="80.0" layoutY="170.0" prefHeight="32.0" prefWidth="99.0" styleClass="myLabel" text="Username :">
+            </Label>
+            <Label layoutX="81.0" layoutY="204.0" prefHeight="32.0" prefWidth="111.0" styleClass="myLabel" text="Password :">
+            </Label>
+            <Button fx:id="login" layoutX="278.0" layoutY="273.0" mnemonicParsing="false" onAction="#onHandleLogin" styleClass="okbutton" text="Login" />
+            <Hyperlink fx:id="register" layoutX="80.0" layoutY="244.0" onAction="#onHandleRegister" text="Create New Account&gt;&gt;">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Hyperlink>
+            <Label fx:id="alert" layoutX="145.0" layoutY="143.0" prefHeight="27.0" prefWidth="253.0" styleClass="myLabel-alert" text="Wrong Username or Password" textFill="#f90101">
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</GridPane>
