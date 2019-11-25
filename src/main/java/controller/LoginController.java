@@ -1,5 +1,6 @@
 package controller;
 
+import Server.Connection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,16 +27,22 @@ public class LoginController {
             alert.setVisible(true);
         }
         else{
-            login = (Button) actionEvent.getSource();
-            Stage stage =(Stage)login.getScene().getWindow();
-            FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("/home.fxml"));
-            try{
-                Scene scene = new Scene((Parent) fxmlLoader.load(), 800, 600);
-                scene.getStylesheets().add("org/kordamp/bootstrapfx/bootstrapfx.css");
-                stage.setScene(scene);
-                stage.show();
-            }catch (IOException e){
-                e.printStackTrace();
+            if(Connection.isLogin(username.getText(),password.getText())){
+                login = (Button) actionEvent.getSource();
+                Stage stage =(Stage)login.getScene().getWindow();
+                FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("/home.fxml"));
+                try{
+                    Scene scene = new Scene((Parent) fxmlLoader.load(), 800, 600);
+                    scene.getStylesheets().add("org/kordamp/bootstrapfx/bootstrapfx.css");
+                    stage.setScene(scene);
+                    stage.show();
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+            else{
+                alert.setText("Wrong Username or Password");
+                alert.setVisible(true);
             }
         }
 

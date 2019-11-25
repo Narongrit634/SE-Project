@@ -1,5 +1,8 @@
 package Server;
 
+import DesignPattern.Users;
+import com.google.cloud.storage.Acl;
+
 import java.sql.*;
 
 public class Connection {
@@ -9,22 +12,28 @@ public class Connection {
     private static String dbURL ="jdbc:mysql://remotemysql.com:3306/ytzEjdpCNf";
     private static String dbUser = "ytzEjdpCNf";
     private static String dbPass = "L9LcYDD81I";
-    public static void check(){
+
+    public static boolean isLogin(String username ,String password){
         try {
             // setup
             Class.forName(driver);
             java.sql.Connection conn = DriverManager.getConnection(dbURL,dbUser,dbPass);
             if (conn != null) {
-                System.out.println("Connected to the database....");
-                String query = "Select * from users";
+                String query = "Select * from Users Where username = '"+username+"'";
                 Statement statement = conn.createStatement();
                 ResultSet resultSet = statement.executeQuery(query);
                 while (resultSet.next()) {
-                    int id = resultSet.getInt(1);
-                    String name = resultSet.getString(2);
-                    String email = resultSet.getString("email");
+                    if(resultSet.getString("role").equals("teacher") && password.equals(resultSet.getString("password"))){
+                        Users users = Users.getInstance();
+                        users.setId(resultSet.getInt("id"));
+                        users.setName(resultSet.getString("name"));
+                        users.setEmail(resultSet.getString("email"));
+                        users.setUsername(resultSet.getString("username"));
+                        users.setPassword(resultSet.getString("password"));
 
-                    System.out.println("id:"+id+" name:"+name+" email: "+email);
+                        System.out.println(users);
+                        return true;
+                    }
             }
                 // close connection
                 conn.close();
@@ -34,9 +43,7 @@ public class Connection {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+        return false;
     }
 
-    public static void main(String[] args) {
-        Connection.check();
-    }
 }

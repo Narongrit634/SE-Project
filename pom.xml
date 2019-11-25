@@ -35,6 +35,12 @@
             <artifactId>bootstrapfx-core</artifactId>
             <version>0.2.4</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.firebase</groupId>
+            <artifactId>firebase-admin</artifactId>
+            <version>6.10.0</version>
+        </dependency>
     </dependencies>
 
     <repositories>
