@@ -5,30 +5,60 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterController">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" type="Pane" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterController">
    <children>
-      <TextField fx:id="name" layoutX="201.0" layoutY="107.0" styleClass="form-control" />
-      <TextField fx:id="username" layoutX="201.0" layoutY="168.0" styleClass="form-control" />
-      <PasswordField fx:id="password" layoutX="200.0" layoutY="231.0" styleClass="form-control" />
-      <PasswordField fx:id="verifyPass" layoutX="201.0" layoutY="293.0" styleClass="form-control" />
-      <TextField fx:id="email" layoutX="202.0" layoutY="357.0" styleClass="form-control" />
-      <Button fx:id="register" layoutX="610.0" layoutY="510.0" mnemonicParsing="false" onAction="#onRegister" prefHeight="31.0" prefWidth="77.0" styleClass="btn,btn-primary" text="Register">
+      <Button fx:id="register" layoutX="477.0" layoutY="404.0" mnemonicParsing="false" onAction="#onRegister" prefHeight="30.0" prefWidth="80.0" styleClass="btn,btn-primary" text="Register">
       </Button>
-      <Hyperlink fx:id="back" layoutX="104.0" layoutY="517.0" onAction="#onHandleBack" prefHeight="23.0" prefWidth="76.0" text="&lt;&lt;Back">
+      <Hyperlink fx:id="back" layoutX="40.0" layoutY="542.0" onAction="#onHandleBack" prefHeight="23.0" prefWidth="76.0" text="&lt;&lt;Back">
       </Hyperlink>
-      <Label layoutX="90.0" layoutY="105.0" prefHeight="23.0" prefWidth="100.0" styleClass="myLabel" text="name :">
+      <Label fx:id="alert" alignment="CENTER" contentDisplay="CENTER" layoutX="259.0" layoutY="165.0" prefHeight="33.0" prefWidth="298.0" styleClass="myLabel-alert" text="Username is invalid." textFill="#fe0101">
       </Label>
-      <Label layoutX="88.0" layoutY="166.0" prefHeight="23.0" prefWidth="100.0" styleClass="myLabel" text="Username :">
+      <GridPane layoutY="206.0" prefHeight="188.0" prefWidth="800.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.5999755859375" minWidth="10.0" prefWidth="256.8" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.20001220703125" minWidth="10.0" prefWidth="124.80000000000001" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.39998779296877" minWidth="10.0" prefWidth="171.19997558593752" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="246.4000366210937" minWidth="10.0" prefWidth="241.60002441406255" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="23.0" prefWidth="100.0" styleClass="myLabel" text="name :" GridPane.columnIndex="1">
       </Label>
-      <Label layoutX="89.0" layoutY="229.0" prefHeight="23.0" prefWidth="100.0" styleClass="myLabel" text="Password :">
+            <Label prefHeight="23.0" prefWidth="100.0" styleClass="myLabel" text="Username :" GridPane.columnIndex="1" GridPane.rowIndex="1">
       </Label>
-      <Label layoutX="75.0" layoutY="289.0" prefHeight="23.0" prefWidth="114.0" styleClass="myLabel" text="Verify password:">
+            <Label prefHeight="23.0" prefWidth="100.0" styleClass="myLabel" text="Password :" GridPane.columnIndex="1" GridPane.rowIndex="2">
       </Label>
-      <Label layoutX="93.0" layoutY="356.0" prefHeight="23.0" prefWidth="100.0" styleClass="myLabel" text="Email :">
+            <Label prefHeight="23.0" prefWidth="114.0" styleClass="myLabel" text="Verify password:" GridPane.columnIndex="1" GridPane.rowIndex="3">
       </Label>
-      <Label fx:id="alert" layoutX="207.0" layoutY="59.0" prefHeight="33.0" prefWidth="216.0" styleClass="myLabel-alert" text="Username is invalid." textFill="#fe0101">
+            <Label prefHeight="23.0" prefWidth="100.0" styleClass="myLabel" text="Email :" GridPane.columnIndex="1" GridPane.rowIndex="4">
       </Label>
+            <TextField fx:id="name" styleClass="form-control" GridPane.columnIndex="2" />
+            <TextField fx:id="username" styleClass="form-control" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <PasswordField fx:id="password" styleClass="form-control" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <PasswordField fx:id="verifyPass" styleClass="form-control" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="email" styleClass="form-control" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <BorderPane layoutX="-3.0" prefHeight="600.0" prefWidth="807.0">
+         <left>
+            <VBox prefHeight="478.0" prefWidth="170.0" style="-fx-background-color: #D4D3D2;" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <VBox prefHeight="478.0" prefWidth="170.0" style="-fx-background-color: #D4D3D2;" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
    </children>
-</Pane>
+</fx:root>
