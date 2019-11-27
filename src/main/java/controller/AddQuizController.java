@@ -37,7 +37,7 @@ public class AddQuizController implements Initializable {
     TextArea quizText;
 
     @FXML
-    ChoiceBox<Character> scoreChoiceBox , timeChoiceBox , correctChoiceBox ;
+    ChoiceBox<String> scoreChoiceBox , timeChoiceBox , correctChoiceBox ;
 
 
 
@@ -62,9 +62,9 @@ public class AddQuizController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        scoreChoiceBox.getItems().addAll('1','2','3');
-        timeChoiceBox.getItems().addAll('1','2','3');
-        correctChoiceBox.getItems().addAll('1','2','3','4');
+        scoreChoiceBox.getItems().addAll("1","2","3");
+        timeChoiceBox.getItems().addAll("15","30","45");
+        correctChoiceBox.getItems().addAll("1","2","3","4");
         name.setText(UserStore.getUser().getName());
     }
 

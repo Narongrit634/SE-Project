@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddQuizController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddQuizController">
    <left>
       <Pane prefHeight="307.0" prefWidth="45.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER" />
    </left>
@@ -165,11 +165,6 @@
                </VBox.margin>
             </GridPane>
             <Button mnemonicParsing="false" onAction="#OnSaveQuizButtonClick" prefHeight="49.0" prefWidth="146.0" text="บันทึกคำถาม">
-               <VBox.margin>
-                  <Insets left="15.0" right="10.0" top="10.0" />
-               </VBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#OnCancleButtonClick" prefHeight="49.0" prefWidth="184.0" text="สร้างรางวัล">
                <VBox.margin>
                   <Insets left="15.0" right="10.0" top="10.0" />
                </VBox.margin>

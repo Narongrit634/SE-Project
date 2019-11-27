@@ -43,7 +43,7 @@ public class UserDao {
             ps.setString(2, user.getUsername());
             ps.setString(3, user.getPassword());
             ps.setString(4, user.getEmail());
-            ps.setString(5,"student");
+            ps.setString(5,"teacher");
             return ps;
         });
     }
