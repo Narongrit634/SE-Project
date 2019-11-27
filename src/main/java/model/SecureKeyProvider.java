@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 public class SecureKeyProvider {
     // function to generate a random string of length n

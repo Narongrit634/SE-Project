@@ -1,17 +1,22 @@
 package controller;
 
-import Server.Connection;
+import Server.DatabaseManager;
+import dao.UserDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
+import model.User;
+import org.springframework.jdbc.core.JdbcTemplate;
+import store.UserStore;
+import util.SceneManager;
 
-import java.io.IOException;
+
 
 public class LoginController {
+
+    private JdbcTemplate jdbcTemplate = DatabaseManager.getInstance().getJdbcTemplate();
+    private UserDao loginDao = new UserDao(jdbcTemplate);
+
     @FXML
     TextField username;
     @FXML
@@ -22,44 +27,20 @@ public class LoginController {
     Button login;
     @FXML
     Label alert;
-    public void onHandleLogin(ActionEvent actionEvent){
-        if (username.getText().equals("") || password.getText().equals("")){
-            alert.setVisible(true);
-        }
-        else{
-            if(Connection.isLogin(username.getText(),password.getText())){
-                login = (Button) actionEvent.getSource();
-                Stage stage =(Stage)login.getScene().getWindow();
-                FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("/home.fxml"));
-                try{
-                    Scene scene = new Scene((Parent) fxmlLoader.load(), 800, 600);
-                    scene.getStylesheets().add("org/kordamp/bootstrapfx/bootstrapfx.css");
-                    stage.setScene(scene);
-                    stage.show();
-                }catch (IOException e){
-                    e.printStackTrace();
-                }
-            }
-            else{
-                alert.setText("Wrong Username or Password");
-                alert.setVisible(true);
-            }
-        }
 
+    public void onHandleLogin(ActionEvent actionEvent){
+        User user = loginDao.isLogin(username.getText(), password.getText());
+        if (user != null) {
+            UserStore.setUser(user);
+            SceneManager.changeScene(actionEvent,"home.fxml");
+        } else {
+            alert.setVisible(true);
+            alert.setText("Wrong or can't register");
+        }
     }
 
     public void onHandleRegister(ActionEvent actionEvent){
-        register = (Hyperlink) actionEvent.getSource();
-        Stage stage =(Stage)register.getScene().getWindow();
-        FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("/register.fxml"));
-        try{
-            Scene scene = new Scene((Parent) fxmlLoader.load(), 800, 600);
-            scene.getStylesheets().add("org/kordamp/bootstrapfx/bootstrapfx.css");
-            stage.setScene(scene);
-            stage.show();
-        }catch (IOException e){
-            e.printStackTrace();
-        }
+        SceneManager.changeScene(actionEvent,"register.fxml");
     }
 
     public void initialize(){

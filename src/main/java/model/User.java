@@ -1,15 +1,20 @@
-package DesignPattern;
+package model;
 
-public class Users {
+public class User {
     private int id;
-    private String name,username,password,email;
-    private static Users ourInstance = new Users();
+    private String name,username,password,email,role;
 
-    public static Users getInstance() {
-        return ourInstance;
+
+    public User(int id ,String name, String username, String password, String email,String role) {
+        this.name = name;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.role = role;
     }
 
-    private Users() {
+    public User() {
+
     }
 
     public int getId() {
@@ -52,22 +57,23 @@ public class Users {
         this.email = email;
     }
 
-    public static Users getOurInstance() {
-        return ourInstance;
-    }
-
-    public static void setOurInstance(Users ourInstance) {
-        Users.ourInstance = ourInstance;
-    }
+//    public static User getOurInstance() {
+//        return ourInstance;
+//    }
+//
+//    public static void setOurInstance(User ourInstance) {
+//        User.ourInstance = ourInstance;
+//    }
 
     @Override
     public String toString() {
-        return "Users{" +
+        return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 }
