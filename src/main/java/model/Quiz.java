@@ -4,7 +4,7 @@ public class Quiz {
     private String question, ans1, ans2, ans3, ans4, pin,realans;
     private int time, point;
 
-    public Quiz(String question, String ans1, String ans2, String ans3, String ans4,  String realans,String pin, int time, int point) {
+    public Quiz(String question, String ans1, String ans2, String ans3, String ans4, String realans,String pin, int time, int point) {
         this.question = question;
         this.ans1 = ans1;
         this.ans2 = ans2;

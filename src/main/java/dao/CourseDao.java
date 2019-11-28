@@ -1,9 +1,6 @@
 package dao;
 
-import model.Course;
-import model.StudentList;
-import model.UserCourse;
-import model.UserQuiz;
+import model.*;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -15,6 +12,7 @@ public class CourseDao {
     private RowMapper<Course> rowMapper = (rs, rowNum) -> new Course(rs.getString("name"),rs.getString("code"),rs.getString("PIN"),rs.getString("t_name"));
 
     private RowMapper<StudentList> rowMapper2 = (rs, rowNum) -> new StudentList(rs.getInt("user_id"),rs.getString("nameStudent"),rs.getInt("point"));
+
 
     public CourseDao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -30,7 +28,6 @@ public class CourseDao {
         return jdbcTemplate.query(query, rowMapper2);
     }
 
-
     public void addCourse(Course course){
         String query = "INSERT INTO Courses(name, code, PIN, t_name) VALUES (?,?,?,?)";
 
@@ -45,3 +42,4 @@ public class CourseDao {
         });
     }
 }
+

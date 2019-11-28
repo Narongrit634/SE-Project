@@ -1,7 +1,6 @@
 package dao;
 
 import model.Quiz;
-import model.Skill;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 

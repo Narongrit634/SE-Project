@@ -43,7 +43,7 @@ public class AddQuizController implements Initializable {
 
     @FXML
     private void OnSaveQuizButtonClick(ActionEvent event){
-        quizDao.addQuiz(new Quiz(quizText.getText(),ans1.getText(),ans2.getText(),ans3.getText(),ans4.getText(),scoreChoiceBox.getValue().toString(),secCourse.getPIN(),Integer.parseInt(timeChoiceBox.getValue().toString()),Integer.parseInt(correctChoiceBox.getValue().toString())));
+        quizDao.addQuiz(new Quiz(quizText.getText(),ans1.getText(),ans2.getText(),ans3.getText(),ans4.getText(),correctChoiceBox.getValue(),secCourse.getPIN(),Integer.parseInt(timeChoiceBox.getValue()),Integer.parseInt(scoreChoiceBox.getValue())));
 
         QuizListController quizListController = (QuizListController) SceneManager.changeScene(event,"quizList.fxml");
         quizListController.setCourse(secCourse);
@@ -52,12 +52,6 @@ public class AddQuizController implements Initializable {
     public void OnLogOutBunttonCLick (ActionEvent event) {
         SceneManager.changeScene(event,"login.fxml");
     }
-
-    @FXML
-    private void OnCancleButtonClick(ActionEvent actionEvent){
-        SceneManager.changeScene(actionEvent,"quizList.fxml");
-    }
-
 
 
     @Override
