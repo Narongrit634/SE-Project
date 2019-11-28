@@ -7,26 +7,26 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #337C5D;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterController">
    <children>
       <TextField fx:id="name" layoutX="201.0" layoutY="107.0" styleClass="form-control" />
       <TextField fx:id="username" layoutX="201.0" layoutY="168.0" styleClass="form-control" />
       <PasswordField fx:id="password" layoutX="200.0" layoutY="231.0" styleClass="form-control" />
       <PasswordField fx:id="verifyPass" layoutX="201.0" layoutY="293.0" styleClass="form-control" />
-      <TextField fx:id="email" layoutX="202.0" layoutY="357.0" styleClass="form-control" />
-      <Button fx:id="register" layoutX="610.0" layoutY="510.0" mnemonicParsing="false" onAction="#onRegister" prefHeight="31.0" prefWidth="77.0" styleClass="btn,btn-primary" text="Register">
+      <TextField fx:id="email" layoutX="200.0" layoutY="357.0" styleClass="form-control" />
+      <Button fx:id="register" layoutX="610.0" layoutY="510.0" mnemonicParsing="false" onAction="#onRegister" prefHeight="31.0" prefWidth="77.0" style="-fx-background-color: #33C011;" styleClass="btn,btn-primary" text="Register" textFill="WHITE">
       </Button>
-      <Hyperlink fx:id="back" layoutX="104.0" layoutY="517.0" onAction="#onHandleBack" prefHeight="23.0" prefWidth="76.0" text="&lt;&lt;Back">
+      <Hyperlink fx:id="back" layoutX="104.0" layoutY="517.0" onAction="#onHandleBack" prefHeight="23.0" prefWidth="76.0" text="&lt;&lt;Back" textFill="#b5c352">
       </Hyperlink>
-      <Label layoutX="90.0" layoutY="105.0" prefHeight="23.0" prefWidth="100.0" styleClass="myLabel" text="name :">
+      <Label layoutX="132.0" layoutY="109.0" prefHeight="23.0" prefWidth="58.0" styleClass="myLabel" text="name :">
       </Label>
-      <Label layoutX="88.0" layoutY="166.0" prefHeight="23.0" prefWidth="100.0" styleClass="myLabel" text="Username :">
+      <Label layoutX="105.0" layoutY="170.0" prefHeight="23.0" prefWidth="77.0" styleClass="myLabel" text="Username :">
       </Label>
-      <Label layoutX="89.0" layoutY="229.0" prefHeight="23.0" prefWidth="100.0" styleClass="myLabel" text="Password :">
+      <Label layoutX="106.0" layoutY="233.0" prefHeight="23.0" prefWidth="76.0" styleClass="myLabel" text="Password :">
       </Label>
-      <Label layoutX="75.0" layoutY="289.0" prefHeight="23.0" prefWidth="114.0" styleClass="myLabel" text="Verify password:">
+      <Label layoutX="72.0" layoutY="289.0" prefHeight="23.0" prefWidth="108.0" styleClass="myLabel" text="Verify password:">
       </Label>
-      <Label layoutX="93.0" layoutY="356.0" prefHeight="23.0" prefWidth="100.0" styleClass="myLabel" text="Email :">
+      <Label layoutX="136.0" layoutY="359.0" prefHeight="23.0" prefWidth="51.0" styleClass="myLabel" text="Email :">
       </Label>
       <Label fx:id="alert" layoutX="207.0" layoutY="59.0" prefHeight="33.0" prefWidth="216.0" styleClass="myLabel-alert" text="Username is invalid." textFill="#fe0101">
       </Label>
