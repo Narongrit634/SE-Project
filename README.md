@@ -17,6 +17,7 @@ Port: 3306
 * Download Android Studio
 * On AVD update Android to Android PI +
 * Run
+
 *Use*
 1. Design Pattern
 - [x] Singeton Pattern
@@ -27,5 +28,6 @@ Port: 3306
 * Open IntelliJ with Maven
 * Use SDK 10_1.8 +
 * Run
+
 *Use*
 1. Spring Framework
