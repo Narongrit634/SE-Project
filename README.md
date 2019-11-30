@@ -4,7 +4,6 @@ Name  | Student ID
 ----- | ----- |
 Teerayuth Artidakorn | 5910450409 |
 Nicha Suteesukprasert | 5910451022 |
-Teerayuth Artidakorn | 5910450409 |
 Narongrit Neewong | 5910406124 |
 Thanyanan Rungsaengthong | 5910401041 |
 Nalinee Phuangkhiaw | 591040619 |
